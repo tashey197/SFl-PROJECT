@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .reveal-if-active{
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            font-size: 16px;
+            transform: scale(0.8);
+            transition: 0.5s;
+        }
+
+        label{
+            display: block;
+            margin: 0 0 3px 0;
+        }
+
+        input[type=text] {
+            width: 100%;
+        }
+
+        input[type="radio"]:checked ~ .reveal-if-active,
+        input[type="checkbox"]:checked ~ .reveal-if-active {
+            opacity: 1;
+            max-height: 100px;
+            padding: 10px 20px;
+            transform: scale(1);
+            overflow: visible;
+        } 
+
+        form {
+            max-width: 500px;
+            margin: 20px;
+            display: inline-block;
+        }
+        form > div {
+            margin: 0 0 20px 0;
+        }
+
+        form > div label {
+            font-weight: bold;
+        }
+        
+        form > div > div {
+            padding: 5px;
+        }
+
+        form > h4{
+            color:black;
+            font-size: 24px;
+            margin: 0 0 10px 0;
+            text-align: center;
+        }
+        
+        body {
+            font-size: 20px;    
+            margin-left: auto;
+            margin-bottom: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {    
+            text-align: center;
+            /*box-shadow: 5px 10px 18px #f37b53;*/
+        }
+        .header {
+                font-size: 24px;
+                font-weight: 400;
+                text-align: center;
+                line-height: 50px;
+                color: #000;
+                user-select: none;
+                /* border-radius: 15px 15px 0 0; */
+                background: #ccc;
+                margin-bottom: 0;
+              /*  box-shadow: 5px 10px 18px #f37b53;*/
+        }
+        </style>
+</head>
+<body>
+    <form method="post" action="#">
+        <div class="header">
+        <h4>Please select an option for your membership registration</h4>
+        </div>
+        <div class="container">
+            <div>
+                <input type="radio" name="choice-animals" id="choice-animals-dogs" required>
+                <a href="student.html">Student<label for="choice-animals-dogs"></label></a>
+
+                <div class="reveal-if-active">
+                    <!-- <label for="which-dog">
+                        <form action="">
+                            <input type="text" placeholder="Name">
+                            <input type="text" placeholder="Email Address">
+                            <input type="text" placeholder="School name">
+                            <input type="password" placeholder="Password">
+                            <input type="password" placeholder="Confirm Password">
+                            <input type="number" placeholder="+975-*********">
+                            <input type="file" placeholder="upload">
+                        </form>
+                    </label>
+                
+
+                <input type="text" id="which-dog" name="which-dog" class="require-if-active" data-require-pair="#choice-animals-dogs">  -->
+                </div><br>
+            </div>
+            <div>
+                <input type="radio" name="choice-animals" id="choice-animals-cats">
+                <a href="community.html">Community<label for="choice-animals-cats"></label></a>
+                <!-- <div class="reveal-if-active">
+                    <label for="which-cat">
+                        <form>
+                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Email Address">
+                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Confirm Password">
+                        <input type="number" placeholder="+975-*********">
+                        </form>
+                    </label>
+                    <input type="text" name="which-cat" id="which-cat" class="require-if-active" data-require-pair="choice-animals-cats"> 
+                </div> -->
+            </div><br>
+            <div>
+                <input type="radio" name="choice-animals" id="choice-animals-cats">
+                <a href="startups.html">Startups<label for="choice-animals-cats"></label></a>
+                <!-- <div class="reveal-if-active">
+                    <label for="which-cat">
+                        <form>
+                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Email Address">
+                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Confirm Password">
+                        <input type="number" placeholder="+975-*********">
+                        </form>
+                    </label>
+                     <input type="text" name="which-cat" id="which-cat" class="require-if-active" data-require-pair="choice-animals-cats">
+                </div> -->
+            </div><br>
+            <div>
+                <input type="radio" name="choice-animals" id="choice-animals-cats">
+                <a href="company.html">Company<label for="choice-animals-cats"></label></a>
+                <!-- <div class="reveal-if-active">
+                    <label for="which-cat"><form action="">
+                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Email Address">
+                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Confirm Password">
+                        <input type="number" placeholder="+975-*********">
+                    </form></label>
+                 <input type="text" name="which-cat" id="which-cat" class="require-if-active" data-require-pair="choice-animals-cats">
+                </div> -->
+            </div>
+        </div>
+        <div>
+            
+        </div>
+    </form> 
+    <script>
+        // var FormStuff = {
+        //     init: function() {
+        //         this.applyconditionalRequired();
+        //         this.bindUIActions();
+        //     },
+        //     bindUIActions: function() {
+        //         $("input[type='radio'],
+        //         input[type='checkbox']").on("change",
+        //         this.applyconditionalRequired);
+        //     },
+
+        //     applyconditionalRequired: function(){
+        //         $(".require-if-active".each(function(){
+        //             var el = $(this);
+        //             if($(el.data("require-pair")).is(":checked")) {
+        //                 el.prop("required", true);
+        //             }else{
+        //                 el.prop("required", false);
+        //             }
+        //         });
+        //     }
+        // };
+    </script>
+    
+</body>
+</html>
